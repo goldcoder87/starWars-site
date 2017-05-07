@@ -1,0 +1,11 @@
+<h1>List of all Films</h1>
+
+<ul>
+<% @film.each do |film| %>
+  <li>
+    <%= link_to film.title, film_path(film) %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to "HOME", people_path %>

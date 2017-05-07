@@ -1,0 +1,9 @@
+<h1> <%= @person.name %></h1>
+
+  <%= image_tag @person.image.url(:large) %>
+
+<p>
+  <%= @person.description %>
+</p>
+
+<%= link_to "List of Characters", people_path %>

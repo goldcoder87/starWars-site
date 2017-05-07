@@ -1,0 +1,12 @@
+<h1> <%= @film.title %></h1>
+
+  <%= image_tag @film.image.url(:large) %>
+
+<p>
+  <% @film.director %>
+</p>
+<p>
+  <% @film.characters %>
+</p>
+
+<%= link_to "List of Films", films_path %>
