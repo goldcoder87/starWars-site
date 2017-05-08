@@ -1,14 +1,77 @@
 <!DOCTYPE html>
-<html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
-    <title>StarWarsSite</title>
-    <%= csrf_meta_tags %>
+  	<meta charset="utf-8" />
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
+    <div class="row">
+      <div class="large-12 columns">
+        <ul class="orbit-container" data-orbit>
+          <li>
+             <%= image_tag 'bobafett.jpg', alt: "slide 1" %>
+            <div class="orbit-caption">
+              Boba Fett
+            </div>
+          </li>
+          <li>
+             <%= image_tag 'Falcon.jpg', alt: "slide 1" %>
+            <div class="orbit-caption">
+              Millenium Falcon
+            </div>
+          </li>
+          <li>
+             <%= image_tag 'DarthVader.jpg', alt: "slide 1" %>
+            <div class="orbit-caption">
+              Darth Vader
+            </div>
+          </li>
+          <li>
+             <%= image_tag 'cloudcity.jpg', alt: "slide 1" %>
+            <div class="orbit-caption">
+              Bespin
+            </div>
+          </li>
+          <li>
+             <%= image_tag 'NewTrooper.jpg', alt: "slide 1" %>
+            <div class="orbit-caption">
+              Storm Trooper
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
     <%= yield %>
+    <script>
+            $(document).foundation({
+                orbit: {
+                    animation: ‘fade’,
+                    animation_speed: 500,
+                    time_speed: 1000, 
+                    pause_on_hover: true,
+                    bullets: false,
+               }
+           });
+      </script>
+
+
+    <%= javascript_include_tag "application" %>
   </body>
 </html>
