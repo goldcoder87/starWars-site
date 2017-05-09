@@ -1,3 +1,15 @@
 // Place all the styles related to the People controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+  color: #FFD700;
+  text-align: center;
+  font-family: "Star Wars";
+
+}
+
+@font-face {
+    font-family: "Star Wars";
+    src: url('fonts/starwars.ttf'),
+         url('fonts/starwars.eot');
+}
