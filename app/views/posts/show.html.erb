@@ -1,0 +1,9 @@
+<h1> <%= @post.title %></h1>
+
+  <%= image_tag @post.image.url(:large) %>
+
+<p>
+  <%= @post.description %>
+</p>
+
+<%= link_to "Back to Posts", posts_path %>

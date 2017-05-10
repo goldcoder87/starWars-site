@@ -24,7 +24,8 @@ class PeopleController < ApplicationController
   end
 
   def destroy
-    @person=Person.find(params[:id]).destroy
+    @person = Person.find(params[:id]).destroy
+
     flash[:success] = "Character Deleted"
     redirect_to people_path
   end
