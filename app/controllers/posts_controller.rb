@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = current_user.post.build
+    @post = Post.new
   end
 
   private
