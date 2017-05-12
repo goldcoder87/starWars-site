@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem "paperclip", "~> 5.0.0"
 gem 'zurb-foundation'
 gem 'devise'
+gem 'swapi'
+gem 'httparty'
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'

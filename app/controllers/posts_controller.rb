@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def create
-    @post = current_user.post.build(posts_params)
+    @post = Post.new(posts_params)
     if @post.save
       flash[:notice] = "New Post"
       redirect_to post_path(@post)

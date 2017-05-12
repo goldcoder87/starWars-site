@@ -2,25 +2,27 @@
 <div>
 <%= form_for @post, html: { multipart: true } do |f| %>
 </div>
-<div>
+<div class="post_form">
 <%= f.label :title %>
 <%= f.text_field :title %>
 </div>
 
-<div>
+<div class="post_form">
 <%= f.label :description %>
 <%= f.text_field :description%>
 </div>
 
-<div>
+<div class="post_form">
 <%= f.label :url %>
 <%= f.text_field :url%>
 </div>
 
-<div>
+<div class="post_form">
 <%= f.label :image %>
 <%= f.file_field :image %>
 </div>
+<div class="post_form_submit">
 <%= f.submit "Add Post"  %>
+</div>
 
 <% end %>

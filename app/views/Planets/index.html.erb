@@ -1,0 +1,13 @@
+<h1>Planets</h1>
+
+<ul>
+<% @planet.each do |planet| %>
+
+  <li>
+    <%= planet.name %>
+    <%= planet.population %>
+    <%= planet.climate %>
+    <%= planet.films %>
+  </li>
+  <% end %>
+</ul>
