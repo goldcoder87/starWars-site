@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  root "films#index"
+  devise_for :users
+  root "homes#index"
 
   resources :films
   resources :people
+  resources :posts
 end

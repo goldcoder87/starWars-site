@@ -1,0 +1,22 @@
+
+<h1>WELCOME</h1>
+
+<div class="center">
+<%= video_tag "Star Wars Episode 1 - 7 compilation EMOTIONAL.mp4",
+:size => "1000x500", :autoplay => true, :controls => true %>
+</div>
+
+<ul>
+<% @post.each do |post| %>
+
+    <%= image_tag post.image.url(:thumb) %>
+
+  <li>
+    <%= link_to post.title, post_path(post) %>
+  </li>
+  <% end %>
+</ul>
+
+<div class="newpost">
+<%= link_to "Add a new Post", new_post_path %>
+</div>

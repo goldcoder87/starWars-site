@@ -1,6 +1,7 @@
 class PeopleController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def create
-    @person = Person.new(people_params)
+    @person = current_user.people.build(people_params)
     if @person.save
       flash[:notice] = "New Person"
       redirect_to person_path(@person)
@@ -15,7 +16,7 @@ class PeopleController < ApplicationController
   end
 
   def new
-    @person = Person.new
+    @person = current_user.people.build
   end
 
   def show
@@ -23,7 +24,8 @@ class PeopleController < ApplicationController
   end
 
   def destroy
-    @person=Person.find(params[:id]).destroy
+    @person = Person.find(params[:id]).destroy
+
     flash[:success] = "Character Deleted"
     redirect_to people_path
   end
